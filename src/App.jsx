@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home';
-import Paste from './components/Paste.jsx';  // Use the correct casing here
+import Paste from './components/Paste';  // Use the correct casing here
 import ViewPaste from './components/viewPaste';
 const router = createBrowserRouter(
   [
