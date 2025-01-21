@@ -33,25 +33,30 @@ const Paste = () => {
   return (
     <div>
       <input
-        className="p-2 rounded-2xl min-w-[600px] mt-5 border bg-black"
+        className="p-1 rounded-2xl min-w-[300px] mt-5 border bg-black
+        550px:min-w-[500px] 550px:p-1.5 550px:rounded-1.5xl"
         type="search"
         placeholder="Search Here"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-    <div className="border p-2 mt-8">
+    <div className="border p-1.5 mt-8 mr-0.2">
       <div className=" text-white mt-4">All Pastes</div>
-      <div className="flex flex-col gap-5 mt-5 text-white">
+      <div className="flex flex-col gap-5 mt-5 text-white ">
         {filteredData.length > 0 &&
           filteredData.map((paste) => {
             return (
-              <div className="border flex justify-between" key={paste.id}>
+              <div className="border flex justify-between text-left ml-0
+              sm:flex" 
+              key={paste.id}>
                 <div className="ml-2">
-                  <div>{paste.title}</div>
+                  <div className="font-bold">{paste.title}</div>
                   <div>{paste.paste.length > 10 ? paste.paste.slice(0, 10) + "..." : paste.paste}</div>
                   <div>{paste.createdAt}</div>
                 </div>
                 <div className="flex gap-4 place-content-evenly">
+                  <div className="500px:flex"
+                  >
                   <button
                     className="text-black bg-black h-9 flex justify-center items-center mt-2"
                     onClick={() => handleEdit(paste?._id)}
@@ -104,7 +109,8 @@ const Paste = () => {
                       <path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
                     </svg>
                   </button>
-
+                  </div>
+                  <div className="500px:flex">
                   <button
                     className="text-black bg-black h-9 flex justify-center items-center mt-2" 
                     onClick={() => {
@@ -132,6 +138,7 @@ const Paste = () => {
                   fill="currentColor">
                   <path d="M307 34.8c-11.5 5.1-19 16.6-19 29.2l0 64-112 0C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96l96 0 0 64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"/></svg>
                   </button>
+                  </div>
                 </div>
               </div>
             );
